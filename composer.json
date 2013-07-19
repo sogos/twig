@@ -1,0 +1,15 @@
+{
+    "require": {
+        "symfony/form": "2.4.*@dev",
+        "twig/twig": "1.13.*@dev",
+        "pimple/pimple": "1.0.*@dev",
+        "twig/extensions": "1.0.*@dev",
+        "symfony/twig-bridge": "~2.3",
+        "symfony/translation": "2.4.*@dev",
+        "symfony/validator": "~2.3",
+        "symfony/http-foundation": "2.3.*@dev"
+    },
+    "autoload": {
+        "psr-0": { "Dotclear\\": "src/" }
+    }
+}

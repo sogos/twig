@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+
+<body>
+<div class="container">
+  <h1>Oops {{ exception_type }}</h1>
+  <br>
+
+	<small>{{ exception.message }}</small>
+	<br>
+	<h6>BackTrace</h6>
+	<table class="table">
+	{% for line in exception.trace %}
+	<tr>
+		<td><small>{{ line.file }}</small></td>
+		<td><small> line: {{ line.line }}</small></td>
+		<td><small> function: {{ line.function }}()</small></td>
+	</tr>
+	{% endfor %}
+	</table>
+</div>
+
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

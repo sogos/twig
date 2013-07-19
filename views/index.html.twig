@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+
+<body>
+<div class="container">
+
+<p></p>
+{% if isvalid is not null %}
+	{% if isvalid %}
+	<div class="alert alert-success">
+		  <button type="button" class="close" data-dismiss="alert">&times;</button>
+		  <strong>Succes !</strong> Le formulaire est valide
+	</div>
+	{% else %}
+	<div class="alert">
+		  <button type="button" class="close" data-dismiss="alert">&times;</button>
+		  <strong>Erreur !</strong> Le formulaire n'est pas valide
+	</div>
+	{% endif %}
+{% endif %}
+
+
+<form action="" method="POST">
+	{{ form_errors(form) }}
+<table class="table">
+	<tr>
+	    <td>{{ form_label(form.name)}}</td>
+	    <td>{{ form_widget(form.name)}}{{ form_errors(form.name)}}</td>
+    </tr>
+    <tr>
+		<td>{{ form_label(form.email)}}</td>
+		<td>{{ form_widget(form.email)}}{{ form_errors(form.email)}}</td>
+	</tr>
+	<tr>
+		<td>{{ form_label(form.gender)}}</td>
+		<td>{{ form_widget(form.gender)}}{{ form_errors(form.gender)}}</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<input type="submit" name="submit" />
+		</td>
+	</tr>
+</table>
+    {{ form_widget(form._token)}}
+</form>
+
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
